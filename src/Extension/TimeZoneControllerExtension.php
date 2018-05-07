@@ -20,9 +20,6 @@ class TimeZoneControllerExtension extends Extension
      */
     public function TimeInClientTimeZone( $dateTimeString, $providedTimeZone = null)
     {
-
-        echo 'DTS=' . $dateTimeString;
-
         if (empty($dateTimeString)) {
             return '';
         } else {
