@@ -1,0 +1,11 @@
+---
+Name: silverstripe-timezones
+---
+
+# Configure Admin Extensions:
+
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_css:
+    - "suilven/silverstripe-timezones: admin/client/dist/styles/bundle.css"
+  extra_requirements_javascript:
+    - "suilven/silverstripe-timezones: admin/client/dist/js/bundle.js"
