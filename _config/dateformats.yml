@@ -1,0 +1,13 @@
+---
+Name: silverstripe-timezones-dateformats
+---
+Suilven\TimeZones\TemplateModel\FormattableCarbon:
+  # Time zone of the client, normally this is unique, if you need to override for clients around the world then pass
+  # in a timezone explicitly
+  timezone: EST
+
+  # English named formats
+  date_formats:
+    ShortEnglishDate: 'D M d, Y'
+    ShortEnglishDateTime: 'H:i:a D M d, Y'
+    NumericDMYHm: 'd/MM/YYYY HH:mm'
