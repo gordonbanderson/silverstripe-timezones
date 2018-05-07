@@ -13,16 +13,18 @@ use SilverStripe\ORM\FieldType\DBDatetime;
 class TimeZoneHelper
 {
     /**
+     * @param DBDatetime $dateTime the SilverStripe date time object
      * @param null|string $timezone Optional timezone, otherwise will default to PHP setting
      */
     public function convertToUTC(DBDatetime $dateTime, $timezone = null)
     {
         // use the provided timezone, or if not provided the value in ini_get
         $timezone = !empty($timezone) ? $timezone : ini_get('date.timezone');
+        error_log('TIMEZONE: ' . $timezone);
         $timestamp = $dateTime->getTimestamp();
-        echo $timestamp;
+        error_log('TIMESTAMP: ' . $timestamp);
         $carbon = Carbon::createFromTimestamp($timestamp);
-        echo $carbon;
+        error_log(print_r($carbon, 1));
         return $carbon->setTimezone('UTC');
     }
 }

@@ -7,6 +7,7 @@
  */
 namespace Suilven\TimeZones\Tests;
 
+use Carbon\Carbon;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\ORM\FieldType\DBDatetime;
 use Suilven\TimeZones\TimeZoneHelper;
@@ -29,7 +30,10 @@ class TimeZoneHelperTest extends SapphireTest
     public function test_asia() {
         // from http://support.sas.com/documentation/cdl/en/lrdict/64316/HTML/default/viewer.htm#a003169814.htm
         $dateTimeObj = new DBDatetime(' 	2008-09-15T15:53:00+07:00');
+
+        /** @var Carbon $utcTime */
         $utcTime = $this->helper->convertToUTC($dateTimeObj);
-        $this->assertEquals('something', $utcTime);
+
+        $this->assertEquals('something', $utcTime->toIso8601String());
     }
 }
